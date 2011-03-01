@@ -13,6 +13,8 @@ import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import twitter4j.Status;
 
 public class App {
@@ -38,60 +40,18 @@ public class App {
             return;
         }
         DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
-        String sql = "INSERT INTO  `newtweets`.`tweet` (`tweet_id` ,`tweet_user` ,`tweet_user_login` ,`tweet_date` ,`tweet_text` ,`tweet_retweet` ,`tweet_latitude` ,`tweet_longitude` ,`tweet_place` ,`tweet_language`)VALUES (?,?,?,?,?,?,?,?,?,?);";
+        final String sqlStatement = "INSERT INTO  `newtweets`.`tweet` (`tweet_id` ,`tweet_user` ,`tweet_user_login` ,`tweet_date` ,`tweet_text` ,`tweet_retweet` ,`tweet_latitude` ,`tweet_longitude` ,`tweet_place` ,`tweet_language`)VALUES (?,?,?,?,?,?,?,?,?,?);";
         System.out.println("URL: " + url);
         System.out.println("Connection: " + mysqlCon);
         System.out.println(" [*] Waiting for messages. To exit press CTRL+C");
         QueueingConsumer consumer = new QueueingConsumer(chan);
         chan.basicConsume("testqueue", true, consumer);
-        while (true) {
-            try {
-                QueueingConsumer.Delivery delivery = consumer.nextDelivery();
-                ByteArrayInputStream bais = new ByteArrayInputStream(delivery.getBody());
-                ObjectInputStream ois = new ObjectInputStream(bais);
-                Status status = (Status) ois.readObject();
-                //System.out.println(" [x] Received " + status.getText());
-                saveToDatabase(mysqlCon, sql, status);
-                ois.close();
-                bais.close();
-            } catch (SQLException ex) {
-                System.err.println(ex.getSQLState() + " - "+ ex.getLocalizedMessage());
-            }
+        ExecutorService newCachedThreadPool = Executors.newCachedThreadPool();
+        while (true)
+        {
+            QueueingConsumer.Delivery delivery = consumer.nextDelivery();
+            Worker newWorker = new Worker(delivery, mysqlCon, sqlStatement);
+            newCachedThreadPool.execute(newWorker);
         }
-
-    }
-
-    private static void saveToDatabase(java.sql.Connection mysqlCon, String sql, Status status) throws SQLException {
-        //java.sql.Statement stmt = mysqlCon.createStatement();
-        PreparedStatement stmt = mysqlCon.prepareStatement(sql);
-        stmt.setLong(1, status.getId());
-        stmt.setLong(2, status.getUser().getId());
-        stmt.setString(3, status.getUser().getName());
-        stmt.setTimestamp(4, new Timestamp(status.getCreatedAt().getTime()));
-        stmt.setString(5, status.getText());
-        if (status.isRetweet()) {
-            stmt.setLong(6, status.getRetweetedStatus().getId());
-        } else {
-            stmt.setNull(6, java.sql.Types.BIGINT);
-        }
-        if (status.getGeoLocation() != null) {
-            stmt.setFloat(7, (float) status.getGeoLocation().getLatitude());
-            stmt.setFloat(8, (float) status.getGeoLocation().getLongitude());
-        } else {
-            stmt.setNull(7, java.sql.Types.FLOAT);
-            stmt.setNull(8, java.sql.Types.FLOAT);
-        }
-        if (status.getPlace() != null) {
-            stmt.setString(9, status.getPlace().getName());
-        } else {
-            stmt.setNull(9, java.sql.Types.VARCHAR);
-        }
-        stmt.setNull(10, java.sql.Types.VARCHAR);
-        stmt.executeUpdate();
-        stmt.clearParameters();
-        stmt.clearBatch();
-        stmt.close();
-        stmt = null;
-        status = null;
     }
 }
