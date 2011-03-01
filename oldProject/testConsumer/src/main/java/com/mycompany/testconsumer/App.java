@@ -1,21 +1,15 @@
 package com.mycompany.testconsumer;
 
-import com.mysql.jdbc.Statement;
 import com.rabbitmq.client.ConnectionFactory;
 import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.QueueingConsumer;
-import java.io.ByteArrayInputStream;
-import java.io.ObjectInputStream;
 import java.sql.DriverManager;
-import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.sql.Timestamp;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import twitter4j.Status;
 
 public class App {
 
