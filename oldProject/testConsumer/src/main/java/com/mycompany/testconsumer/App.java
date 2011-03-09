@@ -46,7 +46,7 @@ public class App {
         System.out.println(" [*] Waiting for messages. To exit press CTRL+C");
         QueueingConsumer consumer = new QueueingConsumer(chan);
         chan.basicConsume("testqueue", true, consumer);
-        ExecutorService newCachedThreadPool = Executors.newCachedThreadPool();
+        ExecutorService newCachedThreadPool = Executors.newFixedThreadPool(10);
         while (true)
         {
             QueueingConsumer.Delivery delivery = consumer.nextDelivery();
