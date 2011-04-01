@@ -39,7 +39,7 @@ public class App {
         System.out.println("Connection: " + mysqlCon);
         System.out.println(" [*] Waiting for messages. To exit press CTRL+C");
         QueueingConsumer consumer = new QueueingConsumer(chan);
-        chan.basicConsume("testqueue", true, consumer);
+        chan.basicConsume("twitterstream", true, consumer);
         ExecutorService newCachedThreadPool = Executors.newFixedThreadPool(10);
         while (true)
         {
