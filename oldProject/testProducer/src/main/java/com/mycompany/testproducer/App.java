@@ -19,7 +19,7 @@ public class App
                 System.err.println(cause.toString());
             }
         });
-        chan.queueDeclare("testqueue", false, false, false, null);
+        chan.queueDeclare("twitterstream", false, false, false, null);
         StatusListener listener = new Producer(chan, conn);
 
 
