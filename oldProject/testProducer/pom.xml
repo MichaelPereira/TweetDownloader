@@ -34,7 +34,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>com.maventest.App</mainClass>
+                            <mainClass>com.mycompany.testproducer.App</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
