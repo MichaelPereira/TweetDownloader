@@ -37,10 +37,10 @@ public class Producer implements StatusListener
       oos.writeObject(status);
       byte[] serializedStatus = baos.toByteArray();
       if (chan.isOpen()) {
-        chan.basicPublish("", "testqueue", MessageProperties.TEXT_PLAIN, serializedStatus);
+        chan.basicPublish("", "twitterstream", MessageProperties.TEXT_PLAIN, serializedStatus);
       } else {
         chan = conn.createChannel();
-        chan.basicPublish("", "testqueue", MessageProperties.TEXT_PLAIN, serializedStatus);
+        chan.basicPublish("", "twitterstream", MessageProperties.TEXT_PLAIN, serializedStatus);
       }
 
     } catch (IOException ex) {
@@ -51,7 +51,7 @@ public class Producer implements StatusListener
 
   public void onDeletionNotice(StatusDeletionNotice statusDeletionNotice)
   {
-    System.out.println("Got a status deletion notice id:" + statusDeletionNotice.getStatusId());
+    
   }
 
   public void onTrackLimitationNotice(int numberOfLimitedStatuses)
@@ -61,7 +61,7 @@ public class Producer implements StatusListener
 
   public void onScrubGeo(int userId, long upToStatusId)
   {
-    System.out.println("Got scrub_geo event userId:" + userId + " upToStatusId:" + upToStatusId);
+   
   }
 
   public void onException(Exception ex)
