@@ -23,7 +23,7 @@ public class App {
         factory.setHost("localhost");
         conn = factory.newConnection();
         Channel chan = conn.createChannel();
-        chan.queueDeclare("testqueue", false, false, false, null);
+        chan.queueDeclare("twitterstream", false, false, false, null);
         Class.forName("com.mysql.jdbc.Driver");
         String url = "jdbc:mysql://155.246.61.53:3306/newtweets?useUnicode=true&characterEncoding=UTF8";
         java.sql.Connection mysqlCon;
