@@ -46,7 +46,7 @@
             </goals>
             <configuration>
               <mainClass>com.mycompany.testconsumer.App</mainClass>
-              <systemProperties>-Xms4g -Xmx8g</systemProperties>
+              <environmentVariables>-Xms4g -Xmx8g</environmentVariables>
             </configuration>
           </execution>
         </executions>
