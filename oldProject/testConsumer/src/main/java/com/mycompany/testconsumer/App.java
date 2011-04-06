@@ -17,35 +17,37 @@ public class App {
             throws java.io.IOException,
             java.lang.InterruptedException,
             ClassNotFoundException {
-
-        Connection conn = null;
-        ConnectionFactory factory = new ConnectionFactory();
-        factory.setHost("localhost");
-        conn = factory.newConnection();
-        Channel chan = conn.createChannel();
-        chan.queueDeclare("twitterstream", false, false, false, null);
-        Class.forName("com.mysql.jdbc.Driver");
-        String url = "jdbc:mysql://155.246.61.53:3306/newtweets?useUnicode=true&characterEncoding=UTF8";
-        java.sql.Connection mysqlCon;
         try {
-            mysqlCon = DriverManager.getConnection(url, "lsa", "stigmergy");
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-            return;
-        }
-        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
-        final String sqlStatement = "INSERT INTO  `newtweets`.`tweet` (`tweet_id` ,`tweet_user` ,`tweet_user_login` ,`tweet_date` ,`tweet_text` ,`tweet_retweet` ,`tweet_latitude` ,`tweet_longitude` ,`tweet_place` ,`tweet_language`)VALUES (?,?,?,?,?,?,?,?,?,?);";
-        System.out.println("URL: " + url);
-        System.out.println("Connection: " + mysqlCon);
-        System.out.println(" [*] Waiting for messages. To exit press CTRL+C");
-        QueueingConsumer consumer = new QueueingConsumer(chan);
-        chan.basicConsume("twitterstream", true, consumer);
-        ExecutorService newCachedThreadPool = Executors.newFixedThreadPool(10);
-        while (true)
-        {
-            QueueingConsumer.Delivery delivery = consumer.nextDelivery();
-            Worker newWorker = new Worker(delivery, mysqlCon, sqlStatement);
-            newCachedThreadPool.execute(newWorker);
+            Connection conn = null;
+            ConnectionFactory factory = new ConnectionFactory();
+            factory.setHost("localhost");
+            conn = factory.newConnection();
+            Channel chan = conn.createChannel();
+            chan.queueDeclare("twitterstream", false, false, false, null);
+            Class.forName("com.mysql.jdbc.Driver");
+            String url = "jdbc:mysql://155.246.61.53:3306/newtweets?useUnicode=true&characterEncoding=UTF8";
+            java.sql.Connection mysqlCon;
+            try {
+                mysqlCon = DriverManager.getConnection(url, "lsa", "stigmergy");
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+                return;
+            }
+            DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+            final String sqlStatement = "INSERT INTO  `newtweets`.`tweet` (`tweet_id` ,`tweet_user` ,`tweet_user_login` ,`tweet_date` ,`tweet_text` ,`tweet_retweet` ,`tweet_latitude` ,`tweet_longitude` ,`tweet_place` ,`tweet_language`)VALUES (?,?,?,?,?,?,?,?,?,?);";
+            System.out.println("URL: " + url);
+            System.out.println("Connection: " + mysqlCon);
+            System.out.println(" [*] Waiting for messages. To exit press CTRL+C");
+            QueueingConsumer consumer = new QueueingConsumer(chan);
+            chan.basicConsume("twitterstream", true, consumer);
+            ExecutorService newCachedThreadPool = Executors.newFixedThreadPool(10);
+            while (true) {
+                QueueingConsumer.Delivery delivery = consumer.nextDelivery();
+                Worker newWorker = new Worker(delivery, mysqlCon, sqlStatement);
+                newCachedThreadPool.execute(newWorker);
+            }
+        } catch (OutOfMemoryError e) {
+            throw e;
         }
     }
 }
