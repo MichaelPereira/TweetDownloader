@@ -32,7 +32,7 @@
     </dependency>
   </dependencies>
   
-  <!--<build>
+  <build>
     <plugins>
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
@@ -46,10 +46,11 @@
             </goals>
             <configuration>
               <mainClass>com.mycompany.testconsumer.App</mainClass>
+              <environmentVariables>-Xms4g -Xmx8g</environmentVariables>
             </configuration>
           </execution>
         </executions>
       </plugin>
     </plugins>
-  </build>-->
+  </build>
 </project>
