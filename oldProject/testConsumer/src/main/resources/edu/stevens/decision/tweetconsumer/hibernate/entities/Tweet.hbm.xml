@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 7, 2011 2:05:02 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="edu.stevens.decision.tweetconsumer.hibernate.entities.Tweet" table="tweet" catalog="newtweets">
+        <id name="tweetId" type="long">
+            <column name="tweet_id" />
+            <generator class="assigned" />
+        </id>
+        <property name="tweetUser" type="java.lang.Long">
+            <column name="tweet_user" />
+        </property>
+        <property name="tweetUserLogin" type="string">
+            <column name="tweet_user_login" length="45" />
+        </property>
+        <property name="tweetDate" type="timestamp">
+            <column name="tweet_date" length="19" />
+        </property>
+        <property name="tweetText" type="string">
+            <column name="tweet_text" length="140" />
+        </property>
+        <property name="tweetRetweet" type="java.lang.Long">
+            <column name="tweet_retweet" />
+        </property>
+        <property name="tweetLatitude" type="java.lang.Float">
+            <column name="tweet_latitude" precision="12" scale="0" />
+        </property>
+        <property name="tweetLongitude" type="java.lang.Float">
+            <column name="tweet_longitude" precision="12" scale="0" />
+        </property>
+        <property name="tweetPlace" type="string">
+            <column name="tweet_place" length="45" />
+        </property>
+        <property name="tweetLanguage" type="string">
+            <column name="tweet_language" length="8" />
+        </property>
+    </class>
+</hibernate-mapping>

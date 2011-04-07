@@ -30,6 +30,31 @@
       <artifactId>mysql-connector-java</artifactId>
       <version>5.1.14</version>
     </dependency>
+    <dependency>
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate</artifactId>
+      <version>3.2.5.ga</version>
+    </dependency>
+    <dependency>
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate-entitymanager</artifactId>
+      <version>3.3.2.GA</version>
+    </dependency>
+    <dependency>
+      <groupId>javax.sql</groupId>
+      <artifactId>jdbc-stdext</artifactId>
+      <version>2.0</version>
+    </dependency>
+    <dependency>
+      <groupId>javax.transaction</groupId>
+      <artifactId>jta</artifactId>
+      <version>1.0.1B</version>
+    </dependency>
+    <dependency>
+      <groupId>org.hibernate</groupId>
+      <artifactId>ejb3-persistence</artifactId>
+      <version>1.0.1.GA</version>
+    </dependency>
   </dependencies>
 
   <build>
@@ -45,7 +70,7 @@
               <goal>java</goal>
             </goals>
             <configuration>
-              <mainClass>com.mycompany.testconsumer.App</mainClass>
+              <mainClass>edu.stevens.decision.tweetconsumer.App</mainClass>
               <environmentVariables>-Xms4g -Xmx8g</environmentVariables>
             </configuration>
           </execution>
@@ -53,5 +78,4 @@
       </plugin>
     </plugins>
   </build>
-
 </project>

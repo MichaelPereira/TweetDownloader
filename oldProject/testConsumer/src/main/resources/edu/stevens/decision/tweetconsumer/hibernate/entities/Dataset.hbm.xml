@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 7, 2011 2:05:02 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="edu.stevens.decision.tweetconsumer.hibernate.entities.Dataset" table="dataset" catalog="newtweets">
+        <id name="datasetId" type="java.lang.Integer">
+            <column name="dataset_id" />
+            <generator class="identity" />
+        </id>
+        <property name="datasetName" type="string">
+            <column name="dataset_name" length="45" />
+        </property>
+    </class>
+</hibernate-mapping>

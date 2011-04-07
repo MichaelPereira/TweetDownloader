@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 7, 2011 2:05:02 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="edu.stevens.decision.tweetconsumer.hibernate.entities.User" table="user" catalog="newtweets">
+        <id name="userId" type="long">
+            <column name="user_id" />
+            <generator class="assigned" />
+        </id>
+        <property name="userName" type="string">
+            <column name="user_name" length="45" />
+        </property>
+        <property name="userLogin" type="string">
+            <column name="user_login" length="45">
+                <comment>Screen Name</comment>
+            </column>
+        </property>
+        <property name="userLocation" type="string">
+            <column name="user_location" length="45" />
+        </property>
+        <property name="userDescription" type="string">
+            <column name="user_description" length="45" />
+        </property>
+        <property name="userCreated" type="timestamp">
+            <column name="user_created" length="19" />
+        </property>
+        <property name="userRecordUpdated" type="timestamp">
+            <column name="user_record_updated" length="19" not-null="true" />
+        </property>
+        <property name="userNetworkUpdated" type="timestamp">
+            <column name="user_network_updated" length="19" />
+        </property>
+    </class>
+</hibernate-mapping>

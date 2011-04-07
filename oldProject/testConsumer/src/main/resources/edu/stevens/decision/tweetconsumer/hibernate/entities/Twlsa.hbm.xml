@@ -1,0 +1,919 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 7, 2011 2:05:02 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="edu.stevens.decision.tweetconsumer.hibernate.entities.Twlsa" table="twlsa" catalog="newtweets">
+        <composite-id name="id" class="edu.stevens.decision.tweetconsumer.hibernate.entities.TwlsaId">
+            <key-property name="datasetId" type="int">
+                <column name="dataset_id" />
+            </key-property>
+            <key-property name="tweetId" type="long">
+                <column name="tweet_id" />
+            </key-property>
+            <key-property name="twlsaFrame" type="int">
+                <column name="twlsa_frame" />
+            </key-property>
+        </composite-id>
+        <property name="twlsaDim1" type="java.lang.Double">
+            <column name="twlsa_dim1" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim2" type="java.lang.Double">
+            <column name="twlsa_dim2" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim3" type="java.lang.Double">
+            <column name="twlsa_dim3" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim4" type="java.lang.Double">
+            <column name="twlsa_dim4" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim5" type="java.lang.Double">
+            <column name="twlsa_dim5" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim6" type="java.lang.Double">
+            <column name="twlsa_dim6" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim7" type="java.lang.Double">
+            <column name="twlsa_dim7" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim8" type="java.lang.Double">
+            <column name="twlsa_dim8" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim9" type="java.lang.Double">
+            <column name="twlsa_dim9" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim10" type="java.lang.Double">
+            <column name="twlsa_dim10" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim11" type="java.lang.Double">
+            <column name="twlsa_dim11" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim12" type="java.lang.Double">
+            <column name="twlsa_dim12" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim13" type="java.lang.Double">
+            <column name="twlsa_dim13" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim14" type="java.lang.Double">
+            <column name="twlsa_dim14" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim15" type="java.lang.Double">
+            <column name="twlsa_dim15" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim16" type="java.lang.Double">
+            <column name="twlsa_dim16" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim17" type="java.lang.Double">
+            <column name="twlsa_dim17" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim18" type="java.lang.Double">
+            <column name="twlsa_dim18" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim19" type="java.lang.Double">
+            <column name="twlsa_dim19" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim20" type="java.lang.Double">
+            <column name="twlsa_dim20" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim21" type="java.lang.Double">
+            <column name="twlsa_dim21" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim22" type="java.lang.Double">
+            <column name="twlsa_dim22" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim23" type="java.lang.Double">
+            <column name="twlsa_dim23" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim24" type="java.lang.Double">
+            <column name="twlsa_dim24" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim25" type="java.lang.Double">
+            <column name="twlsa_dim25" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim26" type="java.lang.Double">
+            <column name="twlsa_dim26" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim27" type="java.lang.Double">
+            <column name="twlsa_dim27" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim28" type="java.lang.Double">
+            <column name="twlsa_dim28" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim29" type="java.lang.Double">
+            <column name="twlsa_dim29" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim30" type="java.lang.Double">
+            <column name="twlsa_dim30" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim31" type="java.lang.Double">
+            <column name="twlsa_dim31" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim32" type="java.lang.Double">
+            <column name="twlsa_dim32" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim33" type="java.lang.Double">
+            <column name="twlsa_dim33" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim34" type="java.lang.Double">
+            <column name="twlsa_dim34" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim35" type="java.lang.Double">
+            <column name="twlsa_dim35" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim36" type="java.lang.Double">
+            <column name="twlsa_dim36" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim37" type="java.lang.Double">
+            <column name="twlsa_dim37" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim38" type="java.lang.Double">
+            <column name="twlsa_dim38" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim39" type="java.lang.Double">
+            <column name="twlsa_dim39" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim40" type="java.lang.Double">
+            <column name="twlsa_dim40" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim41" type="java.lang.Double">
+            <column name="twlsa_dim41" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim42" type="java.lang.Double">
+            <column name="twlsa_dim42" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim43" type="java.lang.Double">
+            <column name="twlsa_dim43" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim44" type="java.lang.Double">
+            <column name="twlsa_dim44" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim45" type="java.lang.Double">
+            <column name="twlsa_dim45" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim46" type="java.lang.Double">
+            <column name="twlsa_dim46" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim47" type="java.lang.Double">
+            <column name="twlsa_dim47" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim48" type="java.lang.Double">
+            <column name="twlsa_dim48" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim49" type="java.lang.Double">
+            <column name="twlsa_dim49" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim50" type="java.lang.Double">
+            <column name="twlsa_dim50" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim51" type="java.lang.Double">
+            <column name="twlsa_dim51" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim52" type="java.lang.Double">
+            <column name="twlsa_dim52" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim53" type="java.lang.Double">
+            <column name="twlsa_dim53" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim54" type="java.lang.Double">
+            <column name="twlsa_dim54" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim55" type="java.lang.Double">
+            <column name="twlsa_dim55" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim56" type="java.lang.Double">
+            <column name="twlsa_dim56" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim57" type="java.lang.Double">
+            <column name="twlsa_dim57" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim58" type="java.lang.Double">
+            <column name="twlsa_dim58" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim59" type="java.lang.Double">
+            <column name="twlsa_dim59" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim60" type="java.lang.Double">
+            <column name="twlsa_dim60" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim61" type="java.lang.Double">
+            <column name="twlsa_dim61" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim62" type="java.lang.Double">
+            <column name="twlsa_dim62" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim63" type="java.lang.Double">
+            <column name="twlsa_dim63" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim64" type="java.lang.Double">
+            <column name="twlsa_dim64" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim65" type="java.lang.Double">
+            <column name="twlsa_dim65" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim66" type="java.lang.Double">
+            <column name="twlsa_dim66" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim67" type="java.lang.Double">
+            <column name="twlsa_dim67" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim68" type="java.lang.Double">
+            <column name="twlsa_dim68" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim69" type="java.lang.Double">
+            <column name="twlsa_dim69" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim70" type="java.lang.Double">
+            <column name="twlsa_dim70" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim71" type="java.lang.Double">
+            <column name="twlsa_dim71" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim72" type="java.lang.Double">
+            <column name="twlsa_dim72" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim73" type="java.lang.Double">
+            <column name="twlsa_dim73" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim74" type="java.lang.Double">
+            <column name="twlsa_dim74" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim75" type="java.lang.Double">
+            <column name="twlsa_dim75" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim76" type="java.lang.Double">
+            <column name="twlsa_dim76" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim77" type="java.lang.Double">
+            <column name="twlsa_dim77" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim78" type="java.lang.Double">
+            <column name="twlsa_dim78" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim79" type="java.lang.Double">
+            <column name="twlsa_dim79" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim80" type="java.lang.Double">
+            <column name="twlsa_dim80" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim81" type="java.lang.Double">
+            <column name="twlsa_dim81" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim82" type="java.lang.Double">
+            <column name="twlsa_dim82" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim83" type="java.lang.Double">
+            <column name="twlsa_dim83" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim84" type="java.lang.Double">
+            <column name="twlsa_dim84" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim85" type="java.lang.Double">
+            <column name="twlsa_dim85" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim86" type="java.lang.Double">
+            <column name="twlsa_dim86" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim87" type="java.lang.Double">
+            <column name="twlsa_dim87" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim88" type="java.lang.Double">
+            <column name="twlsa_dim88" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim89" type="java.lang.Double">
+            <column name="twlsa_dim89" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim90" type="java.lang.Double">
+            <column name="twlsa_dim90" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim91" type="java.lang.Double">
+            <column name="twlsa_dim91" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim92" type="java.lang.Double">
+            <column name="twlsa_dim92" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim93" type="java.lang.Double">
+            <column name="twlsa_dim93" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim94" type="java.lang.Double">
+            <column name="twlsa_dim94" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim95" type="java.lang.Double">
+            <column name="twlsa_dim95" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim96" type="java.lang.Double">
+            <column name="twlsa_dim96" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim97" type="java.lang.Double">
+            <column name="twlsa_dim97" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim98" type="java.lang.Double">
+            <column name="twlsa_dim98" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim99" type="java.lang.Double">
+            <column name="twlsa_dim99" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim100" type="java.lang.Double">
+            <column name="twlsa_dim100" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim101" type="java.lang.Double">
+            <column name="twlsa_dim101" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim102" type="java.lang.Double">
+            <column name="twlsa_dim102" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim103" type="java.lang.Double">
+            <column name="twlsa_dim103" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim104" type="java.lang.Double">
+            <column name="twlsa_dim104" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim105" type="java.lang.Double">
+            <column name="twlsa_dim105" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim106" type="java.lang.Double">
+            <column name="twlsa_dim106" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim107" type="java.lang.Double">
+            <column name="twlsa_dim107" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim108" type="java.lang.Double">
+            <column name="twlsa_dim108" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim109" type="java.lang.Double">
+            <column name="twlsa_dim109" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim110" type="java.lang.Double">
+            <column name="twlsa_dim110" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim111" type="java.lang.Double">
+            <column name="twlsa_dim111" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim112" type="java.lang.Double">
+            <column name="twlsa_dim112" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim113" type="java.lang.Double">
+            <column name="twlsa_dim113" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim114" type="java.lang.Double">
+            <column name="twlsa_dim114" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim115" type="java.lang.Double">
+            <column name="twlsa_dim115" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim116" type="java.lang.Double">
+            <column name="twlsa_dim116" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim117" type="java.lang.Double">
+            <column name="twlsa_dim117" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim118" type="java.lang.Double">
+            <column name="twlsa_dim118" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim119" type="java.lang.Double">
+            <column name="twlsa_dim119" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim120" type="java.lang.Double">
+            <column name="twlsa_dim120" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim121" type="java.lang.Double">
+            <column name="twlsa_dim121" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim122" type="java.lang.Double">
+            <column name="twlsa_dim122" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim123" type="java.lang.Double">
+            <column name="twlsa_dim123" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim124" type="java.lang.Double">
+            <column name="twlsa_dim124" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim125" type="java.lang.Double">
+            <column name="twlsa_dim125" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim126" type="java.lang.Double">
+            <column name="twlsa_dim126" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim127" type="java.lang.Double">
+            <column name="twlsa_dim127" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim128" type="java.lang.Double">
+            <column name="twlsa_dim128" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim129" type="java.lang.Double">
+            <column name="twlsa_dim129" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim130" type="java.lang.Double">
+            <column name="twlsa_dim130" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim131" type="java.lang.Double">
+            <column name="twlsa_dim131" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim132" type="java.lang.Double">
+            <column name="twlsa_dim132" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim133" type="java.lang.Double">
+            <column name="twlsa_dim133" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim134" type="java.lang.Double">
+            <column name="twlsa_dim134" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim135" type="java.lang.Double">
+            <column name="twlsa_dim135" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim136" type="java.lang.Double">
+            <column name="twlsa_dim136" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim137" type="java.lang.Double">
+            <column name="twlsa_dim137" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim138" type="java.lang.Double">
+            <column name="twlsa_dim138" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim139" type="java.lang.Double">
+            <column name="twlsa_dim139" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim140" type="java.lang.Double">
+            <column name="twlsa_dim140" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim141" type="java.lang.Double">
+            <column name="twlsa_dim141" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim142" type="java.lang.Double">
+            <column name="twlsa_dim142" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim143" type="java.lang.Double">
+            <column name="twlsa_dim143" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim144" type="java.lang.Double">
+            <column name="twlsa_dim144" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim145" type="java.lang.Double">
+            <column name="twlsa_dim145" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim146" type="java.lang.Double">
+            <column name="twlsa_dim146" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim147" type="java.lang.Double">
+            <column name="twlsa_dim147" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim148" type="java.lang.Double">
+            <column name="twlsa_dim148" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim149" type="java.lang.Double">
+            <column name="twlsa_dim149" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim150" type="java.lang.Double">
+            <column name="twlsa_dim150" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim151" type="java.lang.Double">
+            <column name="twlsa_dim151" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim152" type="java.lang.Double">
+            <column name="twlsa_dim152" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim153" type="java.lang.Double">
+            <column name="twlsa_dim153" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim154" type="java.lang.Double">
+            <column name="twlsa_dim154" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim155" type="java.lang.Double">
+            <column name="twlsa_dim155" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim156" type="java.lang.Double">
+            <column name="twlsa_dim156" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim157" type="java.lang.Double">
+            <column name="twlsa_dim157" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim158" type="java.lang.Double">
+            <column name="twlsa_dim158" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim159" type="java.lang.Double">
+            <column name="twlsa_dim159" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim160" type="java.lang.Double">
+            <column name="twlsa_dim160" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim161" type="java.lang.Double">
+            <column name="twlsa_dim161" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim162" type="java.lang.Double">
+            <column name="twlsa_dim162" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim163" type="java.lang.Double">
+            <column name="twlsa_dim163" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim164" type="java.lang.Double">
+            <column name="twlsa_dim164" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim165" type="java.lang.Double">
+            <column name="twlsa_dim165" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim166" type="java.lang.Double">
+            <column name="twlsa_dim166" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim167" type="java.lang.Double">
+            <column name="twlsa_dim167" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim168" type="java.lang.Double">
+            <column name="twlsa_dim168" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim169" type="java.lang.Double">
+            <column name="twlsa_dim169" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim170" type="java.lang.Double">
+            <column name="twlsa_dim170" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim171" type="java.lang.Double">
+            <column name="twlsa_dim171" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim172" type="java.lang.Double">
+            <column name="twlsa_dim172" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim173" type="java.lang.Double">
+            <column name="twlsa_dim173" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim174" type="java.lang.Double">
+            <column name="twlsa_dim174" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim175" type="java.lang.Double">
+            <column name="twlsa_dim175" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim176" type="java.lang.Double">
+            <column name="twlsa_dim176" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim177" type="java.lang.Double">
+            <column name="twlsa_dim177" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim178" type="java.lang.Double">
+            <column name="twlsa_dim178" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim179" type="java.lang.Double">
+            <column name="twlsa_dim179" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim180" type="java.lang.Double">
+            <column name="twlsa_dim180" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim181" type="java.lang.Double">
+            <column name="twlsa_dim181" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim182" type="java.lang.Double">
+            <column name="twlsa_dim182" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim183" type="java.lang.Double">
+            <column name="twlsa_dim183" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim184" type="java.lang.Double">
+            <column name="twlsa_dim184" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim185" type="java.lang.Double">
+            <column name="twlsa_dim185" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim186" type="java.lang.Double">
+            <column name="twlsa_dim186" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim187" type="java.lang.Double">
+            <column name="twlsa_dim187" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim188" type="java.lang.Double">
+            <column name="twlsa_dim188" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim189" type="java.lang.Double">
+            <column name="twlsa_dim189" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim190" type="java.lang.Double">
+            <column name="twlsa_dim190" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim191" type="java.lang.Double">
+            <column name="twlsa_dim191" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim192" type="java.lang.Double">
+            <column name="twlsa_dim192" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim193" type="java.lang.Double">
+            <column name="twlsa_dim193" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim194" type="java.lang.Double">
+            <column name="twlsa_dim194" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim195" type="java.lang.Double">
+            <column name="twlsa_dim195" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim196" type="java.lang.Double">
+            <column name="twlsa_dim196" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim197" type="java.lang.Double">
+            <column name="twlsa_dim197" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim198" type="java.lang.Double">
+            <column name="twlsa_dim198" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim199" type="java.lang.Double">
+            <column name="twlsa_dim199" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim200" type="java.lang.Double">
+            <column name="twlsa_dim200" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim201" type="java.lang.Double">
+            <column name="twlsa_dim201" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim202" type="java.lang.Double">
+            <column name="twlsa_dim202" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim203" type="java.lang.Double">
+            <column name="twlsa_dim203" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim204" type="java.lang.Double">
+            <column name="twlsa_dim204" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim205" type="java.lang.Double">
+            <column name="twlsa_dim205" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim206" type="java.lang.Double">
+            <column name="twlsa_dim206" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim207" type="java.lang.Double">
+            <column name="twlsa_dim207" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim208" type="java.lang.Double">
+            <column name="twlsa_dim208" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim209" type="java.lang.Double">
+            <column name="twlsa_dim209" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim210" type="java.lang.Double">
+            <column name="twlsa_dim210" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim211" type="java.lang.Double">
+            <column name="twlsa_dim211" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim212" type="java.lang.Double">
+            <column name="twlsa_dim212" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim213" type="java.lang.Double">
+            <column name="twlsa_dim213" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim214" type="java.lang.Double">
+            <column name="twlsa_dim214" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim215" type="java.lang.Double">
+            <column name="twlsa_dim215" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim216" type="java.lang.Double">
+            <column name="twlsa_dim216" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim217" type="java.lang.Double">
+            <column name="twlsa_dim217" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim218" type="java.lang.Double">
+            <column name="twlsa_dim218" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim219" type="java.lang.Double">
+            <column name="twlsa_dim219" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim220" type="java.lang.Double">
+            <column name="twlsa_dim220" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim221" type="java.lang.Double">
+            <column name="twlsa_dim221" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim222" type="java.lang.Double">
+            <column name="twlsa_dim222" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim223" type="java.lang.Double">
+            <column name="twlsa_dim223" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim224" type="java.lang.Double">
+            <column name="twlsa_dim224" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim225" type="java.lang.Double">
+            <column name="twlsa_dim225" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim226" type="java.lang.Double">
+            <column name="twlsa_dim226" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim227" type="java.lang.Double">
+            <column name="twlsa_dim227" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim228" type="java.lang.Double">
+            <column name="twlsa_dim228" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim229" type="java.lang.Double">
+            <column name="twlsa_dim229" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim230" type="java.lang.Double">
+            <column name="twlsa_dim230" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim231" type="java.lang.Double">
+            <column name="twlsa_dim231" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim232" type="java.lang.Double">
+            <column name="twlsa_dim232" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim233" type="java.lang.Double">
+            <column name="twlsa_dim233" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim234" type="java.lang.Double">
+            <column name="twlsa_dim234" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim235" type="java.lang.Double">
+            <column name="twlsa_dim235" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim236" type="java.lang.Double">
+            <column name="twlsa_dim236" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim237" type="java.lang.Double">
+            <column name="twlsa_dim237" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim238" type="java.lang.Double">
+            <column name="twlsa_dim238" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim239" type="java.lang.Double">
+            <column name="twlsa_dim239" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim240" type="java.lang.Double">
+            <column name="twlsa_dim240" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim241" type="java.lang.Double">
+            <column name="twlsa_dim241" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim242" type="java.lang.Double">
+            <column name="twlsa_dim242" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim243" type="java.lang.Double">
+            <column name="twlsa_dim243" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim244" type="java.lang.Double">
+            <column name="twlsa_dim244" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim245" type="java.lang.Double">
+            <column name="twlsa_dim245" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim246" type="java.lang.Double">
+            <column name="twlsa_dim246" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim247" type="java.lang.Double">
+            <column name="twlsa_dim247" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim248" type="java.lang.Double">
+            <column name="twlsa_dim248" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim249" type="java.lang.Double">
+            <column name="twlsa_dim249" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim250" type="java.lang.Double">
+            <column name="twlsa_dim250" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim251" type="java.lang.Double">
+            <column name="twlsa_dim251" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim252" type="java.lang.Double">
+            <column name="twlsa_dim252" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim253" type="java.lang.Double">
+            <column name="twlsa_dim253" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim254" type="java.lang.Double">
+            <column name="twlsa_dim254" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim255" type="java.lang.Double">
+            <column name="twlsa_dim255" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim256" type="java.lang.Double">
+            <column name="twlsa_dim256" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim257" type="java.lang.Double">
+            <column name="twlsa_dim257" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim258" type="java.lang.Double">
+            <column name="twlsa_dim258" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim259" type="java.lang.Double">
+            <column name="twlsa_dim259" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim260" type="java.lang.Double">
+            <column name="twlsa_dim260" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim261" type="java.lang.Double">
+            <column name="twlsa_dim261" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim262" type="java.lang.Double">
+            <column name="twlsa_dim262" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim263" type="java.lang.Double">
+            <column name="twlsa_dim263" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim264" type="java.lang.Double">
+            <column name="twlsa_dim264" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim265" type="java.lang.Double">
+            <column name="twlsa_dim265" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim266" type="java.lang.Double">
+            <column name="twlsa_dim266" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim267" type="java.lang.Double">
+            <column name="twlsa_dim267" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim268" type="java.lang.Double">
+            <column name="twlsa_dim268" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim269" type="java.lang.Double">
+            <column name="twlsa_dim269" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim270" type="java.lang.Double">
+            <column name="twlsa_dim270" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim271" type="java.lang.Double">
+            <column name="twlsa_dim271" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim272" type="java.lang.Double">
+            <column name="twlsa_dim272" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim273" type="java.lang.Double">
+            <column name="twlsa_dim273" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim274" type="java.lang.Double">
+            <column name="twlsa_dim274" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim275" type="java.lang.Double">
+            <column name="twlsa_dim275" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim276" type="java.lang.Double">
+            <column name="twlsa_dim276" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim277" type="java.lang.Double">
+            <column name="twlsa_dim277" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim278" type="java.lang.Double">
+            <column name="twlsa_dim278" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim279" type="java.lang.Double">
+            <column name="twlsa_dim279" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim280" type="java.lang.Double">
+            <column name="twlsa_dim280" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim281" type="java.lang.Double">
+            <column name="twlsa_dim281" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim282" type="java.lang.Double">
+            <column name="twlsa_dim282" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim283" type="java.lang.Double">
+            <column name="twlsa_dim283" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim284" type="java.lang.Double">
+            <column name="twlsa_dim284" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim285" type="java.lang.Double">
+            <column name="twlsa_dim285" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim286" type="java.lang.Double">
+            <column name="twlsa_dim286" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim287" type="java.lang.Double">
+            <column name="twlsa_dim287" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim288" type="java.lang.Double">
+            <column name="twlsa_dim288" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim289" type="java.lang.Double">
+            <column name="twlsa_dim289" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim290" type="java.lang.Double">
+            <column name="twlsa_dim290" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim291" type="java.lang.Double">
+            <column name="twlsa_dim291" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim292" type="java.lang.Double">
+            <column name="twlsa_dim292" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim293" type="java.lang.Double">
+            <column name="twlsa_dim293" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim294" type="java.lang.Double">
+            <column name="twlsa_dim294" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim295" type="java.lang.Double">
+            <column name="twlsa_dim295" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim296" type="java.lang.Double">
+            <column name="twlsa_dim296" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim297" type="java.lang.Double">
+            <column name="twlsa_dim297" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim298" type="java.lang.Double">
+            <column name="twlsa_dim298" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim299" type="java.lang.Double">
+            <column name="twlsa_dim299" precision="22" scale="0" />
+        </property>
+        <property name="twlsaDim300" type="java.lang.Double">
+            <column name="twlsa_dim300" precision="22" scale="0" />
+        </property>
+    </class>
+</hibernate-mapping>
