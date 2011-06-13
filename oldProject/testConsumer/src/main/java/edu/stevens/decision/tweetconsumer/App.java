@@ -32,8 +32,9 @@ public class App
       int i = 0;
       while (i < 1000) {
         Session openSession = HibernateUtil.getSessionFactory().openSession();
+        Session openSession2 = HibernateUtil.getSessionFactory2().openSession();
         QueueingConsumer.Delivery delivery = consumer.nextDelivery();
-        Worker newWorker = new Worker(delivery, openSession);
+        Worker newWorker = new Worker(delivery, openSession, openSession2);
         newCachedThreadPool.execute(newWorker);
         ++i;
         System.out.println(i);
