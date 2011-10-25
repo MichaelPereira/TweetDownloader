@@ -68,4 +68,8 @@ public class Producer implements StatusListener
   {
     ex.printStackTrace();
   }
+
+    public void onScrubGeo(long l, long l1) {
+        
+    }
 }

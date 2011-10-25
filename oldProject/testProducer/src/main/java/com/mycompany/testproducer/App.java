@@ -1,14 +1,28 @@
 package com.mycompany.testproducer;
 
 import com.rabbitmq.client.*;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.Properties;
 import twitter4j.*;
 import twitter4j.conf.ConfigurationBuilder;
 
-public class App 
-{
-    public static void main( String[] args )
-     throws java.io.IOException {
-         Connection conn = null;
+public class App {
+
+    public static void main(String[] args)
+            throws IOException {
+        Connection conn = null;
+
+        Properties properties = new Properties();
+        try {
+            properties.load(new FileInputStream("src/main/resources/config.properties"));
+            System.out.println();
+        } catch (IOException e) {
+            System.err.println(e);
+        }
+        if (1 == 1) {
+            return;
+        }
         ConnectionFactory factory = new ConnectionFactory();
         factory.setHost("localhost");
         conn = factory.newConnection();
@@ -24,11 +38,13 @@ public class App
 
 
         ConfigurationBuilder cb = new ConfigurationBuilder();
-        cb.setOAuthConsumerKey("nHmnTH8xHKTTWl6IxdX6Qg")
-                .setOAuthConsumerSecret("KieSvlnLyWcTWiRoyT0oVsGHYbbYl6YxeZ5fdMUho")
-                .setOAuthAccessToken("94156943-sII2dGBjmjkSpWvooya6ysvbKRzfy7ZKJSIz5S1db")
-                .setOAuthAccessTokenSecret("OObKVEvH2CcWDlheeA3WPksPSKqAu1L4xyxrTdGVXf8");
-        TwitterStream twitterStream = new TwitterStreamFactory(cb.build(), listener).getInstance();
+        cb.setOAuthConsumerKey(properties.getProperty("OAuthConsumerKey"))
+                .setOAuthConsumerSecret(properties.getProperty("OAuthConsumerSecret"))
+                .setOAuthAccessToken(properties.getProperty("OAuthAccessToken"))
+                .setOAuthAccessTokenSecret(properties.getProperty("OAuthAccessTokenSecret"));
+
+        TwitterStream twitterStream = new TwitterStreamFactory(cb.build()).getInstance();
+        twitterStream.addListener(listener);
         twitterStream.sample();
     }
 }
