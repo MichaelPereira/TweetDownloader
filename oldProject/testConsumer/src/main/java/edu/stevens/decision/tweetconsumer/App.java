@@ -5,6 +5,8 @@ import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.QueueingConsumer;
 import edu.stevens.decision.tweetconsumer.hibernate.utils.HibernateUtil;
+import java.io.FileInputStream;
+import java.util.Properties;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
@@ -19,9 +21,11 @@ public class App
           ClassNotFoundException
   {
     try {
+        Properties properties = new Properties();
+        properties.load(new FileInputStream("src/main/resources/config.properties"));
       Connection conn = null;
       ConnectionFactory factory = new ConnectionFactory();
-      factory.setHost("jnickersmacpro1.mgnt.stevens-tech.edu");
+      factory.setHost(properties.getProperty("RabbitMQHost"));
       conn = factory.newConnection();
       Channel chan = conn.createChannel();
       chan.queueDeclare("twitterstream", false, false, false, null);

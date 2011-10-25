@@ -27,7 +27,6 @@ public class HibernateUtil {
             // config file.
             sessionFactory = new AnnotationConfiguration().configure().buildSessionFactory();
             sessionFactory2 = new AnnotationConfiguration().configure("hibernate.cfg_1.xml").buildSessionFactory();
-            //.setProperty("hibernate.connection.url", "jdbc:mysql://jnickersmacpro1.mgnt.stevens-tech.edu:3306/newtwitterpages?useUnicode=true&amp;characterEncoding=UTF8")
         } catch (Throwable ex) {
             // Log the exception. 
             System.err.println("Initial SessionFactory creation failed." + ex);
