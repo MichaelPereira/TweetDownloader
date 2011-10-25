@@ -16,15 +16,12 @@ public class App {
         Properties properties = new Properties();
         try {
             properties.load(new FileInputStream("src/main/resources/config.properties"));
-            System.out.println();
         } catch (IOException e) {
             System.err.println(e);
         }
-        if (1 == 1) {
-            return;
-        }
+        
         ConnectionFactory factory = new ConnectionFactory();
-        factory.setHost("localhost");
+        factory.setHost(properties.getProperty("RabbitMQHost"));
         conn = factory.newConnection();
         Channel chan = conn.createChannel();
         conn.addShutdownListener(new ShutdownListener() {
