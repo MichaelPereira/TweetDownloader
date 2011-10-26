@@ -4,7 +4,10 @@ import com.rabbitmq.client.*;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import twitter4j.*;
+import twitter4j.conf.Configuration;
 import twitter4j.conf.ConfigurationBuilder;
 
 public class App {
@@ -39,8 +42,16 @@ public class App {
                 .setOAuthConsumerSecret(properties.getProperty("OAuthConsumerSecret"))
                 .setOAuthAccessToken(properties.getProperty("OAuthAccessToken"))
                 .setOAuthAccessTokenSecret(properties.getProperty("OAuthAccessTokenSecret"));
-
-        TwitterStream twitterStream = new TwitterStreamFactory(cb.build()).getInstance();
+        Configuration config = cb.build();
+        Twitter twitter = new TwitterFactory(config).getInstance();
+        try {
+            User verifyCredentials = twitter.verifyCredentials();
+        } catch (TwitterException ex) {
+            System.err.println(ex.getErrorMessage());
+            return;
+        }
+        
+        TwitterStream twitterStream = new TwitterStreamFactory(config).getInstance();
         twitterStream.addListener(listener);
         twitterStream.sample();
     }
