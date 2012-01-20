@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+    <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+    <property name="hibernate.connection.url">jdbc:mysql://jnickersmacpro1.mgnt.stevens-tech.edu:3306/newtwitterpages?useUnicode=true&amp;characterEncoding=UTF8</property>
+    <property name="hibernate.connection.username">lsa</property>
+    <property name="hibernate.connection.password">stigmergy</property>
+    <property name="hibernate.generate_statistics">true</property>
+    <mapping resource="edu/stevens/decision/tweetconsumer/hibernate/entities/TweetWeekly.hbm.xml"/>
+  </session-factory>
+</hibernate-configuration>

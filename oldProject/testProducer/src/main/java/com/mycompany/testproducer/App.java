@@ -45,7 +45,7 @@ public class App {
         Configuration config = cb.build();
         Twitter twitter = new TwitterFactory(config).getInstance();
         try {
-            User verifyCredentials = twitter.verifyCredentials();
+            twitter.verifyCredentials();
         } catch (TwitterException ex) {
             System.err.println(ex.getErrorMessage());
             return;

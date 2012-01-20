@@ -13,7 +13,7 @@ import java.util.concurrent.TimeUnit;
 import org.hibernate.classic.Session;
 
 public class App {
-    
+
     public static void main(String[] args)
             throws java.io.IOException,
             java.lang.InterruptedException,
@@ -31,8 +31,8 @@ public class App {
             QueueingConsumer consumer = new QueueingConsumer(chan);
             chan.basicConsume("twitterstream", true, consumer);
             ExecutorService newCachedThreadPool = Executors.newFixedThreadPool(5);
-            
-            
+
+
             for (int i = 0; i < 10000; ++i) {
                 Session openSession = HibernateUtil.getSessionFactory().openSession();
                 Session openSession2 = HibernateUtil.getSessionFactory2().openSession();
@@ -41,12 +41,11 @@ public class App {
                 newCachedThreadPool.execute(newWorker);
             }
             System.out.println("Processed 10000");
-            newCachedThreadPool.shutdown();          
+            newCachedThreadPool.shutdown();
             Runtime.getRuntime().exit(0);
         } catch (OutOfMemoryError e) {
             throw e;
         } catch (org.hibernate.exception.ConstraintViolationException e) {
-            
         } catch (org.hibernate.exception.GenericJDBCException e) {
         } catch (org.hibernate.exception.DataException e) {
         }
