@@ -9,7 +9,11 @@ import edu.stevens.decision.tweetconsumer.hibernate.entities.Tweet;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
+
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
 import org.hibernate.classic.Session;
+
 import twitter4j.Status;
 
 /**
@@ -18,11 +22,12 @@ import twitter4j.Status;
  */
 public class Worker implements Runnable {
 
-    Delivery _delivery;
-    Session _session;
-    Session _session2;
+    private Delivery _delivery;
+    private Session _session;
+    private Session _session2;
+    private Logger logger = Logger.getLogger(Worker.class);
 
-    Worker(Delivery delivery, Session openSession, Session openSession2) {
+    public Worker(Delivery delivery, Session openSession, Session openSession2) {
         _session = openSession;
         _session2 = openSession2;
         _delivery = delivery;
@@ -34,23 +39,20 @@ public class Worker implements Runnable {
             ByteArrayInputStream bais = new ByteArrayInputStream(_delivery.getBody());
             ois = new ObjectInputStream(bais);
             Status status = (Status) ois.readObject();
-            //System.out.println(" [x] Received " + status.getText());
             saveToDatabase(status);
             _session.close();
             _session2.close();
             ois.close();
             bais.close();
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        } catch (ClassNotFoundException ex) {
-            ex.printStackTrace();
-        } finally {
+        } catch (Throwable t) {
+        	logError(t);
+		}finally {
             try {
                 if (ois != null) {
                     ois.close();
                 }
             } catch (IOException ex) {
-                ex.printStackTrace();
+            	logError(ex);
             }
         }
     }
@@ -79,4 +81,11 @@ public class Worker implements Runnable {
         _session2.save(t);
         _session2.getTransaction().commit();
     }
+    
+	private void logError(Throwable t) {
+		if (logger.isEnabledFor(Level.ERROR)) {
+			logger.error(t.getMessage(), t);
+		}
+	}
+
 }
