@@ -50,7 +50,7 @@ public class App {
 
 				QueueingConsumer.Delivery delivery = consumer.nextDelivery();
 				if (delivery != null) {
-					Worker newWorker = new Worker(null, openSession,
+					Worker newWorker = new Worker(delivery, openSession,
 							openSession2);
 					newCachedThreadPool.execute(newWorker);
 				}
