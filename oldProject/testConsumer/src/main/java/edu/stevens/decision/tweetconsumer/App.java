@@ -9,6 +9,7 @@ import edu.stevens.decision.tweetconsumer.hibernate.utils.HibernateUtil;
 import java.util.Properties;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
@@ -47,9 +48,9 @@ public class App {
 				Session openSession2 = HibernateUtil.getSessionFactory2()
 						.openSession();
 
-				QueueingConsumer.Delivery delivery = consumer.nextDelivery(20);
+				QueueingConsumer.Delivery delivery = consumer.nextDelivery();
 				if (delivery != null) {
-					Worker newWorker = new Worker(delivery, openSession,
+					Worker newWorker = new Worker(null, openSession,
 							openSession2);
 					newCachedThreadPool.execute(newWorker);
 				}

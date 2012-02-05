@@ -66,23 +66,23 @@
 
 			<!-- Command: mvn test -->
 			<!-- Launch the "main class" as a test -->
-<!-- 			<plugin> -->
-<!-- 				<groupId>org.codehaus.mojo</groupId> -->
-<!-- 				<artifactId>exec-maven-plugin</artifactId> -->
-<!-- 				<version>1.2</version> -->
-<!-- 				<executions> -->
-<!-- 					<execution> -->
-<!-- 						<phase>test</phase> -->
-<!-- 						<goals> -->
-<!-- 							<goal>java</goal> -->
-<!-- 						</goals> -->
-<!-- 						<configuration> -->
-<!-- 							<mainClass>edu.stevens.decision.tweetconsumer.App</mainClass> -->
-<!-- 							<environmentVariables>-Xms4g -Xmx8g</environmentVariables> -->
-<!-- 						</configuration> -->
-<!-- 					</execution> -->
-<!-- 				</executions> -->
-<!-- 			</plugin> -->
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>exec-maven-plugin</artifactId>
+				<version>1.2</version>
+				<executions>
+					<execution>
+						<phase>test</phase>
+						<goals>
+							<goal>java</goal>
+						</goals>
+						<configuration>
+							<mainClass>edu.stevens.decision.tweetconsumer.App</mainClass>
+							<environmentVariables>-Xms4g -Xmx8g</environmentVariables>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
 
 			<!-- Command: mvn package -->
 			<!-- Create a jar that can launch "main class" (using java -jar) -->
